@@ -8,7 +8,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 
     name = req.params.get('name')
     test = req.params.get('test')
-    age = req.params.get('age')
+    age = req.params.get('myage')
 
     if not name:
         try:
@@ -18,10 +18,10 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
         else:
             name = req_body.get('name')
             test = req_body.get('test')
-            age = req_body.get('age')
+            age = req_body.get('myage')
 
     if name:
-        return func.HttpResponse(f"Hello, {name}, {test}, {age}. This HTTP triggered function executed successfully.")
+        return func.HttpResponse(f"Hello, {name}, {test}, {myage}. This HTTP triggered function executed successfully.")
     else:
         return func.HttpResponse(
              "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response.",
